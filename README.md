@@ -2,10 +2,10 @@
 unraid test
 
 # make
-gcc -fPIC -shared unraid.c -o unraid_happy.so
+gcc -fPIC -shared unraid.c -o BTRS.key
 
 # install
-copy to `/boot/config/unraid_happy.so`
+copy to `/boot/config/BTRS.key`
 
 # patch
 `vim /boot/config/go`
@@ -16,7 +16,7 @@ export UNRAID_GUID=usb flash GUID
 export UNRAID_NAME=your name
 export UNRAID_DATE=unix timestamp
 export UNRAID_VERSION=Pro
-LD_PRELOAD=/boot/config/unraid_happy.so /usr/local/sbin/emhttp &
+LD_PRELOAD=/boot/config/BTRS.key /usr/local/sbin/emhttp &
 ```
 
 # final 

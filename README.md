@@ -8,6 +8,9 @@ gcc -fPIC -shared unraid.c -o unraid_happy.so
 copy to `/boot/config/unraid_happy.so`
 
 # patch
+`vim /boot/config/go`
+
+replace `/usr/local/sbin/emhttp &` with
 ```
 export UNRAID_GUID=usb flash GUID
 export UNRAID_NAME=your name

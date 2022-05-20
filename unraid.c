@@ -27,7 +27,8 @@ int RSA_public_decrypt(int flen, unsigned char *from, unsigned char *to, RSA *rs
   if (!rsa_public_decrypt) {
     rsa_public_decrypt = (RSA_PUBLIC_DECRYPT_FUNC)dlsym(RTLD_NEXT, "RSA_public_decrypt");
   }
-  if (!strcmp(get_self_exe_name(), "emhttpd") || !strcmp(get_self_exe_name(), "shfs")) {
+  const char* proc = get_self_exe_name();
+  if (!strcmp(proc, "emhttpd") || !strcmp(proc, "shfs")) {
     sprintf(to, BTRS_FORMAT, getenv("UNRAID_GUID"), getenv("UNRAID_VERSION"), getenv("UNRAID_NAME"), getenv("UNRAID_DATE"));
     int len = strlen(to);
     return len;

@@ -1,6 +1,8 @@
 # unraid_test
 unraid test
 
+!!! only work on version <= 6.10.x !!!
+
 # make
 gcc -fPIC -shared unraid.c -o BTRS.key
 
